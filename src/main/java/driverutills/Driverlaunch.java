@@ -28,9 +28,11 @@ public final class Driverlaunch
             ChromeOptions options = new ChromeOptions();
             options.getBrowserName();
             options.addArguments("--start-maximized");
-            try {
+            try
+            {
                 driver = new RemoteWebDriver(new URL(uri), options);
-            } catch (MalformedURLException e) {
+            } catch (MalformedURLException e)
+            {
                 throw new RuntimeException(e);
             }
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -45,9 +47,11 @@ public final class Driverlaunch
             FirefoxOptions options = new FirefoxOptions();
             options.getBrowserName();
             options.addArguments("--start-maximize","--headless=new");
-            try {
+            try
+            {
                 driver = new RemoteWebDriver(new URL(uri), options);
-            } catch (MalformedURLException e) {
+            } catch (MalformedURLException e)
+            {
                 throw new RuntimeException(e);
             }
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
@@ -59,9 +63,11 @@ public final class Driverlaunch
             EdgeOptions options = new EdgeOptions();
             options.getBrowserName();
             options.addArguments("--start-maximize");
-            try {
+            try
+            {
                 driver = new RemoteWebDriver(new URL(uri), options);
-            } catch (MalformedURLException e) {
+            } catch (MalformedURLException e)
+            {
                 throw new RuntimeException(e);
             }
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));

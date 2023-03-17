@@ -16,13 +16,15 @@ import java.util.List;
 public class BrokenlinkTest {
     @Test
     @an(author = "divya varnwal", category = "smoke")
-    public void findbrokenlink() {
+    public void findbrokenlink()
+    {
+
         List<WebElement> linklist = Drivermanager.getDriver().findElements(By.tagName("a"));
-        for (WebElement element : linklist) {
+        for (WebElement element : linklist)
+        {
             try {
                 String url = element.getAttribute("href");
                 URL linkurl = new URL(url);
-
                 HttpURLConnection con = (HttpURLConnection) linkurl.openConnection();
                 con.connect();
                 int responsecode = con.getResponseCode();
@@ -36,7 +38,8 @@ public class BrokenlinkTest {
                     Reportlogger.info(url+ "is  valid and response code is"+responsecode);
                 }
 
-            } catch (IOException e) {
+            } catch (IOException e)
+            {
                 e.printStackTrace();
             }
         }

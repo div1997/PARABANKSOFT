@@ -21,7 +21,7 @@
            </classes>
     </test>
     <test name="D:/SELENIUM2" enabled="true">
-        <parameter name="browsername" value="microsoftedge"></parameter>
+        <parameter name="browsername" value="micrsoftedge"></parameter>
         <classes>
             <class name="Homepagetest">
                 <methods>
