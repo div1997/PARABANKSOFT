@@ -24,6 +24,7 @@ public class Testlistener implements  ISuiteListener, ITestListener
     public void onTestStart(ITestResult result)
     {
        Report.creattest(result.getName());
+       Reportlogger.info(result.getInstanceName());
         String [] author =  result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(an.class).author();
         Reportlogger.assignauthor(author);
         String [] category =  result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(an.class).category();
