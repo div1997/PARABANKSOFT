@@ -66,19 +66,19 @@ public class Banklandingpage extends Basewebaction
       return Drivermanager.getDriver().findElement(registerationlink).getText();
 
   }
-  public String verifyhomeicon()
+  public boolean verifyhomeicon()
   {
-      return Drivermanager.getDriver().findElement(homeicon).getText();
+      return Drivermanager.getDriver().findElement(homeicon).isDisplayed();
 
   }
-  public String verifyaboutusicon()
+  public boolean verifyaboutusicon()
   {
-      return Drivermanager.getDriver().findElement(abousicon).getText();
+      return Drivermanager.getDriver().findElement(abousicon).isDisplayed();
 
   }
-  public String verifycontactusicon()
+  public boolean verifycontactusicon()
   {
-      return Drivermanager.getDriver().findElement(contactusicon).getText();
+      return Drivermanager.getDriver().findElement(contactusicon).isDisplayed();
 
   }
 

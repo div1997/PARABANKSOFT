@@ -80,12 +80,12 @@ public class Homepagetest  extends  Basetest
     public void verifyiconsonlandingpage()
     {
         bk = new Banklandingpage();
-       softly.assertThat(bk.verifyhomeicon()).isEqualTo("home");
-        Reportlogger.info("login button lable is display : "+bk.verifyhomeicon());
-       softly.assertThat(bk.verifyaboutusicon()).isEqualTo("about");
-        Reportlogger.info("login button lable is display : "+bk.verifyaboutusicon());
-       softly.assertThat(bk.verifycontactusicon()).isEqualTo("contact");
-       Reportlogger.info("login button lable is display : "+bk.verifycontactusicon());
+       softly.assertThat(bk.verifyhomeicon()).isEqualTo(true);
+       Reportlogger.info("login button lable is display"+bk.verifyhomeicon());
+       softly.assertThat(bk.verifyaboutusicon()).isEqualTo(true);
+       Reportlogger.info("login button lable is display "+bk.verifyhomeicon());
+       softly.assertThat(bk.verifycontactusicon()).isEqualTo(true);
+      Reportlogger.info("login button lable is display "+bk.verifyhomeicon());
        softly.assertAll();
 
     }

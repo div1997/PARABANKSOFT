@@ -13,7 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
-public class BrokenlinkTest {
+public class BrokenlinkTest extends Basetest {
     @Test
     @an(author = "divya varnwal", category = "smoke")
     public void findbrokenlink()

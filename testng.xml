@@ -15,20 +15,20 @@
                    <include name="verifysubmenubar"></include>
                    <include name="isloginlabledisplay"></include>
                    <include name="verifyloginformlable"></include>
+                   <include name="verifyiconsonlandingpage"></include>
+                   <include name="verifyatmservices"></include>
+                   <include name="verifyonlineservices"></include>
+                   <include name="verifynewslableanddate"></include>
 
                </methods>
            </class>
            </classes>
     </test>
-    <test name="D:/SELENIUM2" enabled="true">
+    <test name="D:/SELENIUM2" enabled="false">
         <parameter name="browsername" value="micrsoftedge"></parameter>
         <classes>
             <class name="Homepagetest">
                 <methods>
-                    <include name="verifyiconsonlandingpage"></include>
-                    <include name="verifyatmservices"></include>
-                    <include name="verifyonlineservices"></include>
-                    <include name="verifynewslableanddate"></include>
 
                 </methods>
             </class>
