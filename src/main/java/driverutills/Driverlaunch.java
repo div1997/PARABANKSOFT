@@ -27,6 +27,7 @@ public final class Driverlaunch
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.getBrowserName();
+            options.addArguments("--start-maximized");
             try {
                 driver = new RemoteWebDriver(new URL(uri), options);
             } catch (MalformedURLException e) {
@@ -43,6 +44,7 @@ public final class Driverlaunch
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options = new FirefoxOptions();
             options.getBrowserName();
+            options.addArguments("--start-maximize","--headless=new");
             try {
                 driver = new RemoteWebDriver(new URL(uri), options);
             } catch (MalformedURLException e) {
@@ -56,6 +58,7 @@ public final class Driverlaunch
             WebDriverManager.edgedriver().setup();
             EdgeOptions options = new EdgeOptions();
             options.getBrowserName();
+            options.addArguments("--start-maximize");
             try {
                 driver = new RemoteWebDriver(new URL(uri), options);
             } catch (MalformedURLException e) {
