@@ -22,7 +22,7 @@ public final class Driverlaunch
 
      static void launchdriver( String browsername, String url)
     {
-        if(browsername.equals("chrome"))
+        if(browsername.equalsIgnoreCase("chrome"))
         {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
@@ -41,7 +41,7 @@ public final class Driverlaunch
 
 
         }
-        else if (browsername.equals("firefox"))
+        else if (browsername.equalsIgnoreCase("firefox"))
         {
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options = new FirefoxOptions();
@@ -57,7 +57,7 @@ public final class Driverlaunch
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             Drivermanager.setDriver(driver);
             Drivermanager.getDriver().get(url);
-        } else if (browsername.equals("microsoftedge"))
+        } else if (browsername.equalsIgnoreCase("microsoftedge"))
         {
             WebDriverManager.edgedriver().setup();
             EdgeOptions options = new EdgeOptions();
