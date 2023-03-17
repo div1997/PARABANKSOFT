@@ -1,4 +1,5 @@
 import org.assertj.core.api.Assertions;
+import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 import pageutills.Banklandingpage;
 import annotationutills.an;
@@ -12,13 +13,16 @@ public class Homepagetest  extends  Basetest
 {
 
     Banklandingpage bk;
+
+    SoftAssertions softly = new SoftAssertions();
     @Test(enabled = true)
     @an (author = "divya varnwal", category = "smoke")
     public void verifytitle()
     {
          bk = new Banklandingpage();
         String title =  bk.verifytitle();
-        Assertions.assertThat(title).isEqualTo("ParaBank | Welcome | Online Banking");
+       softly.assertThat(title).isEqualTo("ParaBank | Welcome | Online Banking");
+       softly.assertAll();
     }
     @Test
     @an(author = "divya", category = "smoke")
@@ -27,7 +31,7 @@ public class Homepagetest  extends  Basetest
          bk = new Banklandingpage();
         int leftmenusize = bk.verifyleftmenu().size();
         Reportlogger.info("left menu size is " + leftmenusize);
-        Assertions.assertThat(leftmenusize).isEqualTo(6);
+        softly.assertThat(leftmenusize).isEqualTo(6);
         for (String name : bk.verifyleftmenu())
         {
             if (name.equals("Solutions") || name.equals("About Us") || name.equals("Services") || name.equals("Products") || name.equals("Locations")
@@ -42,31 +46,33 @@ public class Homepagetest  extends  Basetest
 
 
         }
+        softly.assertAll();
     }
    @Test
    @an(author = "divya Varnwal", category = "smoke")
     public void isloginlabledisplay()
    {
        bk = new Banklandingpage();
-       Assertions.assertThat(bk.verifyloginlable()).isEqualTo("Customer Login");
+       softly.assertThat(bk.verifyloginlable()).isEqualTo("Customer Login");
        Reportlogger.info("lable is display"+bk.verifyloginlable());
+       softly.assertAll();
    }
    @Test
    @an(author = "divya Varnwal", category = "smoke")
     public  void verifyloginformlable()
    {
        bk = new Banklandingpage();
-       Assertions.assertThat(bk.verifyusernamelable()).isEqualTo("Username");
+       softly.assertThat(bk.verifyusernamelable()).isEqualTo("Username");
        Reportlogger.info("username lable is display"+bk.verifyusernamelable());
-       Assertions.assertThat(bk.verifypasswordlable()).isEqualTo("Password");
+     softly.assertThat(bk.verifypasswordlable()).isEqualTo("Password");
        Reportlogger.info("password lable is display"+bk.verifypasswordlable());
-       Assertions.assertThat(bk.isloginbuttondisplay()).isEqualTo(true);
+       softly.assertThat(bk.isloginbuttondisplay()).isEqualTo(true);
        Reportlogger.info("login button lable is display : "+bk.isloginbuttondisplay());
-       Assertions.assertThat(bk.verifyforgotlinktext()).isEqualTo("Forgot login info?");
+      softly.assertThat(bk.verifyforgotlinktext()).isEqualTo("Forgot login info?");
        Reportlogger.info("forgot login  lable is display"+bk.verifyforgotlinktext());
-       Assertions.assertThat(bk.verifyregisterlinktext()).isEqualTo("Register");
+      softly.assertThat(bk.verifyregisterlinktext()).isEqualTo("Register");
        Reportlogger.info("user register lable is display"+bk.verifyregisterlinktext());
-
+     softly.assertAll();
    }
 
    @Test
@@ -74,12 +80,13 @@ public class Homepagetest  extends  Basetest
     public void verifyiconsonlandingpage()
     {
         bk = new Banklandingpage();
-        Assertions.assertThat(bk.verifyhomeicon()).isEqualTo("home");
+       softly.assertThat(bk.verifyhomeicon()).isEqualTo("home");
         Reportlogger.info("login button lable is display : "+bk.verifyhomeicon());
-        Assertions.assertThat(bk.verifyaboutusicon()).isEqualTo("about");
+       softly.assertThat(bk.verifyaboutusicon()).isEqualTo("about");
         Reportlogger.info("login button lable is display : "+bk.verifyaboutusicon());
-        Assertions.assertThat(bk.verifycontactusicon()).isEqualTo("contact");
+       softly.assertThat(bk.verifycontactusicon()).isEqualTo("contact");
        Reportlogger.info("login button lable is display : "+bk.verifycontactusicon());
+       softly.assertAll();
 
     }
     @Test

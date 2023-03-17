@@ -1,6 +1,7 @@
 import annotationutills.an;
 import com.github.javafaker.Faker;
 import org.assertj.core.api.Assertions;
+import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.Test;
 import pageutills.Registerationpage;
 import reportutills.Reportlogger;
@@ -8,14 +9,17 @@ import reportutills.Reportlogger;
 public class Userragistrationpagetest  extends Basetest
 {
     Registerationpage rs;
+
+    SoftAssertions softly = new SoftAssertions();
     @Test
     @an(author = "divya varnwal", category = "smoke")
     public void verifyragistrationpagetitile()
     {
          rs = new Registerationpage();
         String title=  rs.openregistrationlinkinnewtabandverifytitle();
-        Assertions.assertThat(title).isEqualTo("ParaBank | Register for Free Online Account Access");
+        softly.assertThat(title).isEqualTo("ParaBank | Register for Free Online Account Access");
         Reportlogger.pass(title);
+        softly.assertAll();
     }
 
     @Test

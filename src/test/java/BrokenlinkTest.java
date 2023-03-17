@@ -26,10 +26,12 @@ public class BrokenlinkTest {
                 HttpURLConnection con = (HttpURLConnection) linkurl.openConnection();
                 con.connect();
                 int responsecode = con.getResponseCode();
-                if (responsecode >= 400) {
+                if (responsecode >= 400)
+                {
 
                     Reportlogger.info(url+ "is not valid and response code is"+responsecode);
-                } else {
+                } else
+                {
 
                     Reportlogger.info(url+ "is  valid and response code is"+responsecode);
                 }

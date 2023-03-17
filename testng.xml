@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="methods" thread-count="1">
+<suite name="All Test Suite" parallel="methods" thread-count="3" preserve-order="true" verbose="5">
     <listeners>
 
         <listener class-name="listenerutills.Antransformer"></listener>
         <listener class-name="listenerutills.Testlistener"></listener>
     </listeners>
-    <test verbose="2" preserve-order="true" name="D:/SELENIUM">
+    <test name="D:/SELENIUM1" enabled="true">
+        <parameter name="browsername" value="chrome"></parameter>
        <classes>
            <class name="Homepagetest">
                <methods>
@@ -14,21 +15,42 @@
                    <include name="verifysubmenubar"></include>
                    <include name="isloginlabledisplay"></include>
                    <include name="verifyloginformlable"></include>
-                   <include name="verifyiconsonlandingpage"></include>
-                   <include name="verifyatmservices"></include>
-                   <include name="verifyonlineservices"></include>
-                   <include name="verifynewslableanddate"></include>
+
                </methods>
            </class>
+           </classes>
+    </test>
+    <test name="D:/SELENIUM2" enabled="true">
+        <parameter name="browsername" value="microsoftedge"></parameter>
+        <classes>
+            <class name="Homepagetest">
+                <methods>
+                    <include name="verifyiconsonlandingpage"></include>
+                    <include name="verifyatmservices"></include>
+                    <include name="verifyonlineservices"></include>
+                    <include name="verifynewslableanddate"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="D:/SELENIUM3" enabled="true">
+        <parameter name="browsername" value="microsoftedge"></parameter>
+        <classes>
            <class name="Userragistrationpagetest">
                <methods>
                    <include name="verifyragistrationpagetitile"></include>
                    <include name="registeruser"></include>
                </methods>
            </class>
-           <class name="BrokenlinkTest">
+        </classes>
+    </test>
+    <test name="D:/SELENIUM4" enabled="true">
+        <parameter name="browsername" value="chrome"></parameter>
+        <classes>
+           <class name="BrokenlinkTest" >
                <methods>
-                   <exclude name="findbrokenlink"></exclude>
+                   <include name="findbrokenlink"></include>
                </methods>
            </class>
 

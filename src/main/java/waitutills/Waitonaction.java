@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Waitonaction
@@ -16,15 +17,15 @@ public class Waitonaction
     {
         if(waitenums == Waitenums.CLICKABLE)
         {
-            element = new WebDriverWait(Drivermanager.getDriver(), 10)
+            element = new WebDriverWait(Drivermanager.getDriver(), Duration.ofSeconds(10))
                     .until(ExpectedConditions.elementToBeClickable(by));
         } else if (waitenums == Waitenums.VISIBLE)
         {
-            element = new WebDriverWait(Drivermanager.getDriver(), 10)
+            element = new WebDriverWait(Drivermanager.getDriver(), Duration.ofSeconds(10))
                     .until(ExpectedConditions.visibilityOfElementLocated(by));
         } else if (waitenums == Waitenums.PRESENCE)
         {
-            element = new WebDriverWait(Drivermanager.getDriver(), 10)
+            element = new WebDriverWait(Drivermanager.getDriver(), Duration.ofSeconds(10))
                     .until(ExpectedConditions.presenceOfElementLocated(by));
         }
         else
