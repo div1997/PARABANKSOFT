@@ -27,7 +27,7 @@ public final class Driverlaunch
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.getBrowserName();
-            options.addArguments("--start-maximized");
+            options.addArguments("--start-maximized" ,"--headless=new");
             try
             {
                 driver = new RemoteWebDriver(new URL(uri), options);
@@ -46,7 +46,7 @@ public final class Driverlaunch
             WebDriverManager.firefoxdriver().setup();
             FirefoxOptions options = new FirefoxOptions();
             options.getBrowserName();
-            options.addArguments("--start-maximize","--headless=new");
+            options.addArguments("--start-maximize");
             try
             {
                 driver = new RemoteWebDriver(new URL(uri), options);
