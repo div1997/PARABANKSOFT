@@ -70,7 +70,13 @@ public final class Driverlaunch
             {
                 throw new RuntimeException(e);
             }
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().deleteAllCookies();
+            driver.manage().logs().toString();
+            driver.notify();
+            driver.manage().timeouts().getPageLoadTimeout();
+            driver.manage().timeouts().getScriptTimeout();
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
             Drivermanager.setDriver(driver);
             Drivermanager.getDriver().get(url);
 
