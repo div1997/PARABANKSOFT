@@ -118,10 +118,10 @@ public class Registerationpage extends Basewebaction
       Drivermanager.getDriver().findElement(confrim).sendKeys(rp);
       return this;
   }
-  public void submit()
+  public Registerpage submit()
   {
       Drivermanager.getDriver().findElement(submit).submit();
-
+      return new Registerpage();
   }
 }
 

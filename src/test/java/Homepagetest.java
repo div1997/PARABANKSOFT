@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 import pageutills.Banklandingpage;
 import annotationutills.an;
 import reportutills.Reportlogger;
+import waitutills.Waitonaction;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
