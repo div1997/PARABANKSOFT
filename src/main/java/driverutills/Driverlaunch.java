@@ -71,7 +71,7 @@ public final class Driverlaunch
                 options.getBrowserName();
                 options.addArguments("--start-maximize");
                 driver = new RemoteWebDriver(new URL(uri), options);
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
                 driver.manage().deleteAllCookies();
                 driver.manage().logs().toString();
                 driver.manage().timeouts().getPageLoadTimeout();
@@ -84,17 +84,18 @@ public final class Driverlaunch
     }
         catch (MalformedURLException e)
         {
-            throw new RuntimeException(new Throwable().getCause());
+            throw new RuntimeException(e.getCause());
         }
         catch (ScriptTimeoutException e)
         {
-            throw new RuntimeException(new Throwable().getCause());
+           // throw new RuntimeException(e.getLocalizedMessage());
+            throw new RuntimeException("script timeout is"+driver.manage().timeouts().getScriptTimeout());
         } catch (NoSuchSessionException e)
         {
-            throw new RuntimeException(new Throwable().getCause());
+            throw new RuntimeException(e.getRawMessage());
         } catch (WebDriverException e)
         {
-            throw new RuntimeException(new Throwable().getCause());
+            throw new RuntimeException(e.getMessage());
         }
 
     }
